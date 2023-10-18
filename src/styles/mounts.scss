@@ -1,0 +1,300 @@
+.mount-filters {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px 6px;
+  justify-content: space-evenly;
+  align-items: center;
+
+  & > * {
+    margin: 8px 6px !important;
+    min-width: 160px !important;
+    flex: 2;
+  }
+
+  & > *.filter-field {
+    flex: 5.2;
+    overflow: auto;
+  }
+
+  & > *.small {
+    flex: 1;
+    min-width: 100px !important;
+  }
+
+  .mount-search {
+    .clear-input {
+      cursor: pointer;
+      visibility: hidden;
+      width: 0.75em;
+      height: 0.75em;
+    }
+
+    .MuiInputBase-root {
+      &.Mui-focused, &:hover {
+        .clear-input {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.mobile {
+  .mount-filters > *.filter-field {
+    min-width: 220px !important;
+  }
+}
+
+.no-results {
+  padding: 4px 0;
+  text-align: center;
+  margin: auto;
+}
+
+.mount-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 178px);
+  grid-gap: 1rem;
+  justify-content: space-between;
+
+  .mount {
+    width: 178px;
+    cursor: pointer;
+
+    &:hover .portrait img {
+      opacity: 0.8;
+    }
+
+    .portrait {
+      margin: 4px;
+      position: relative;
+      color: white;
+      text-decoration: none;
+
+      img {
+        margin: auto;
+        display: block;
+        width: 170px;
+        height: 264px;
+        border-radius: 3px;
+        object-fit: cover;
+        object-position: 75% 0;
+      }
+
+      .obtainables {
+        position: absolute;
+        bottom: 3px;
+        left: 3px;
+        background: rgba(0, 0, 0, 0.65);
+        padding: 1px 3px 3px;
+        border-radius: 4px;
+
+        .dropdown-icon:after {
+          margin-left: 0;
+        }
+
+        .dropdown-icon + .dropdown-icon {
+          margin-left: 2px;
+        }
+      }
+
+      .name {
+        position: absolute;
+        text-align: center;
+        top: 3px;
+        left: 3px;
+        right: 3px;
+        background: rgba(0, 0, 0, 0.65);
+        border-radius: 4px;
+      }
+
+      .speed {
+        background: rgba(0, 0, 0, 0.65);
+        border-radius: 4px;
+        position: absolute;
+        right: 3px;
+        bottom: 3px;
+        padding: 3px;
+        display: block;
+      }
+    }
+  }
+}
+
+.mount-table {
+  overflow: auto;
+
+  .mount-icon {
+    width: 32px;
+
+    img {
+      display: block;
+      width: 32px;
+      border: 1px solid rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  table {
+    min-width: 660px;
+
+    tbody {
+      tr:not(.no-results) {
+        cursor: pointer;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.1);
+        }
+
+        .mount-skills {
+          display: flex;
+
+          .skill + .skill {
+            margin-left: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mount-header-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 6px;
+  position: relative;
+  display: inline-block;
+  vertical-align: -3px;
+
+  &:before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    content: "";
+    position: absolute;
+    background-size: 20px;
+  }
+
+  img {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+  }
+}
+
+.mount-viewer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .info {
+    position: relative;
+
+    .portrait {
+      height: 438px;
+      margin: auto;
+      position: relative;
+      display: inline-block;
+
+      img {
+        min-width: 281px;
+        height: 100%;
+        border-radius: 3px;
+      }
+
+      .left-stats, .right-stats {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+          background: rgba(0, 0, 0, 0.65);
+          border-radius: 4px;
+          padding: 3px;
+          display: inline;
+          margin: 0 3px 3px 3px;
+          font-size: 0.75rem;
+          cursor: help;
+        }
+      }
+
+      .left-stats {
+        left: 0;
+        align-items: flex-start;
+      }
+
+      .right-stats {
+        right: 0;
+        align-items: flex-end;
+      }
+
+      .obtainables {
+        .dropdown-icon:after {
+          margin-left: 0;
+        }
+
+        .dropdown-icon + .dropdown-icon {
+          margin-left: 2px;
+        }
+      }
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .skills {
+      display: flex;
+
+      & > * + * {
+        margin-left: 8px;
+      }
+
+      & + .skills {
+        margin-top: 3px;
+      }
+
+      .skill-alt {
+        margin-left: 8px;
+        flex: 0.25;
+      }
+
+      .skill-alt-note {
+        flex: 1;
+        text-align: right;
+      }
+    }
+  }
+
+  .obtain {
+    min-width: 282px;
+    max-width: 620px;
+    margin-left: 16px;
+    flex: 1;
+
+    .list-cols {
+      max-width: 620px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin: 10px;
+      padding: 0;
+      list-style-type: none;
+
+      & > li {
+        flex: 1 30%;
+      }
+    }
+  }
+}
+
+.portrait-tooltip {
+  height: 250px;
+  max-width: 300px;
+  object-fit: contain;
+  display: block;
+  margin: 3px 0;
+  border-radius: 3px;
+}

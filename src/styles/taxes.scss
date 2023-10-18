@@ -1,0 +1,110 @@
+.calculator-box {
+  display: flex;
+  justify-content: space-between;
+
+  .calculator-totals {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+
+    .building-select {
+      & > .MuiFormControl-root {
+        width: 250px;
+      }
+    }
+
+    .form-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .place-info {
+      min-width: 250px;
+      width: auto;
+    }
+
+    .total-list {
+      margin-top: 8px;
+      max-width: 100%;
+    }
+
+    .MuiFormControl-root, .MuiFormControlLabel-root {
+      margin: 0 12px;
+    }
+
+    .MuiTextField-root {
+      margin: 0;
+    }
+
+    .tax-price {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  & > div:nth-child(2) {
+    max-width: 312px;
+
+    ins {
+      margin: 6px;
+    }
+  }
+}
+
+.property-card {
+  .property-type {
+    font-size: 12px;
+    margin-left: 30px;
+  }
+
+  table {
+    tr:last-child {
+      background-color: rgba(224, 190, 17, 0.15);
+    }
+  }
+
+  .property-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: -8px;
+  }
+}
+
+.property-table {
+  tbody tr td:nth-child(6) {
+    color: #009688;
+  }
+}
+
+.hint {
+  cursor: help;
+}
+
+.mobile {
+  .calculator-totals {
+    flex-direction: column;
+
+    .building-select {
+      width: 100%;
+      margin-bottom: 8px;
+
+      & > .MuiFormControl-root {
+        width: 94%;
+      }
+    }
+
+    .form-options {
+      margin-bottom: 8px;
+      width: 100%;
+      flex-direction: row;
+    }
+
+    .place-info {
+      max-width: 100%;
+    }
+  }
+}

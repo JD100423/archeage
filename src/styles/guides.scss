@@ -1,0 +1,190 @@
+.guide-container {
+  .section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .guide-viewer {
+    width: 100%;
+    max-width: 875px;
+    margin-right: 12px;
+
+    .MuiPaper-root + .MuiPaper-root:not(.MuiExpansionPanel-root):not(.lightbox-thumb) {
+      margin-top: 16px;
+    }
+
+    .MuiTypography-h5:not(:first-child):not(.first), h6:not(:first-child):not(.first) {
+      margin-top: 12px;
+    }
+
+    h6 + h6:not(:first-child) {
+      margin-top: 0;
+    }
+
+    .MuiTypography-subtitle2 {
+      margin-top: 8px;
+    }
+
+    .tips {
+      margin-top: 8px;
+    }
+
+    ul.dashed {
+      margin: 4px 0;
+      padding-inline-start: 25px;
+      list-style-type: none;
+
+      li:before {
+        content: "- ";
+      }
+    }
+
+    .quest-items {
+      display: flex;
+
+      .item-icon {
+        display: inline-block;
+        margin-right: 6px;
+      }
+    }
+
+    .reward-list {
+      margin-top: 0;
+
+      & > * {
+        margin-right: 6px;
+      }
+    }
+
+    .table-wrapper {
+      max-height: 400px;
+      overflow: auto;
+
+      .reward-cell {
+
+        & > * {
+          vertical-align: middle;
+        }
+
+        // FIXME
+        span[data-grade] {
+          display: inline-block;
+          margin: 0 4px;
+        }
+
+        .one-of {
+          display: inline-flex;
+          flex-direction: column;
+
+          &:before {
+            content: 'One:';
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 11px;
+          }
+        }
+      }
+    }
+
+    .lightbox-group {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+  }
+
+  .guide-toc {
+    max-width: 313px;
+    width: 100%;
+  }
+}
+
+.guide-list {
+  padding: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  .guide-category {
+    padding: 6px;
+    border-radius: 5px;
+    min-width: 360px;
+    flex: 1;
+
+    &:nth-child(2n) {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .banner {
+      width: 240px;
+      height: 94px;
+      position: relative;
+
+      &.GAMEPLAY {
+        background-image: url(../images/guides/banners/gameplay.png);
+      }
+
+      &.DAILIES {
+        background-image: url(../images/guides/banners/dailies.png);
+      }
+
+      &.TRADE {
+        background-image: url(../images/guides/banners/trade.png);
+      }
+
+      &.QUESTS {
+        background-image: url(../images/guides/banners/dungeons.png);
+      }
+
+      &.BOSSES {
+        background-image: url(../images/guides/banners/world_bosses.png);
+      }
+
+      &.INSTANCES {
+        background-image: url(../images/guides/banners/instances.png);
+      }
+
+      .cat-name {
+        position: absolute;
+        bottom: 1px;
+        left: 6px;
+      }
+    }
+
+    .cat-list {
+      list-style: none;
+      padding-inline: 4px;
+
+      li {
+        padding: 4px 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        &:nth-child(2n) {
+          background-color: rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+  }
+}
+
+.deadly-icon {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: url(../images/npc_icon.png) -340px -239px;
+  margin: 0 6px 0 0;
+  vertical-align: -2px;
+}
+
+.mobile {
+  .guide-list {
+    .guide-category {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+}

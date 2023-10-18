@@ -1,0 +1,347 @@
+/**
+ Tooltips
+ */
+.MuiTooltip-tooltip.archeage-tooltip {
+  font-family: "Flareserif821BT-Roman", "Nanum Gothic", "Arial", sans-serif;
+  width: 216px;
+  background: rgba(90, 88, 66, 0.95);
+  color: #D7C8B5;
+  padding: 16px;
+  border-radius: 3px;
+  line-height: 1.2;
+  font-size: 14px;
+
+  &.spell-tooltip {
+    width: 262px;
+  }
+
+  &.quest-tooltip {
+    width: 300px;
+  }
+
+  border: 1px solid #757548;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75), inset 0 0 5px 0 #494A2A;
+  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75), inset 0 0 5px 0 #494A2A;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75), inset 0 0 5px 0 #494A2A;
+
+  .header {
+    display: flex;
+
+    & + section:before {
+      margin-top: 10px;
+    }
+  }
+
+  section {
+    position: relative;
+  }
+
+  p {
+    margin: 0 auto;
+    font-size: 13px;
+  }
+
+  section + section:not(.header):before, section.id:after {
+    content: "";
+    display: block;
+    height: 0;
+    margin: 6px auto;
+    border-top: 1px solid rgba(208, 191, 172, 0.3);
+  }
+
+  section.combos:after {
+    content: "";
+    position: absolute;
+    width: 41px;
+    height: 28px;
+    background: url(../images/combo.png);
+    top: -12px;
+    left: calc(50% - 20px);
+  }
+
+  h4 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+  }
+
+  h5 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 12px;
+  }
+
+  h5 + h5 {
+    font-size: 13px;
+  }
+
+  .icon {
+    margin: 0 8px 2px 0;
+    vertical-align: middle;
+  }
+
+  .name, .skill-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .skill-name {
+    width: 100%;
+    justify-content: flex-end;
+    height: 46px;
+
+    h4 {
+      font-size: 15px;
+
+      &:not(.passive-skill) {
+        color: #FFFFFF;
+      }
+    }
+
+    h5 {
+      font-size: 13px;
+    }
+
+    .skill-types {
+      display: flex;
+
+      .skillset {
+        flex: 1;
+      }
+    }
+  }
+
+  .skill-effects {
+    display: flex;
+  }
+
+  .shop-price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .currency {
+      color: inherit;
+      font-size: 12px;
+
+      &:after {
+        top: -1px;
+      }
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  .skill-requirements {
+    color: #FF4538;
+  }
+
+  .passive .skill-requirements:before {
+    margin-bottom: 12px;
+  }
+
+  .description-note {
+    display: block;
+  }
+
+  .combos {
+    margin-top: 18px;
+  }
+
+  .combo-rows {
+    display: flex;
+    flex-direction: column;
+
+    .combo {
+      display: flex;
+      align-items: center;
+      margin-top: 2px;
+
+      &:first-child {
+        margin-top: 6px;
+      }
+
+      .effect-icon {
+        margin-top: 0;
+      }
+
+      .combo-arrow {
+        width: 15px;
+        height: 13px;
+        background: url(../images/combo.png) 0 -32px;
+
+        img {
+          width: 15px;
+          height: 13px;
+          opacity: 0;
+        }
+      }
+
+      div + div, div + p {
+        margin-left: 6px;
+      }
+
+      & + .combo {
+        margin-top: 4px;
+      }
+    }
+
+  }
+
+  .no-sell {
+    color: #C13D36;
+  }
+
+  .currency {
+    color: #65AAE8;
+  }
+
+  .set-items {
+    display: flex;
+    margin: 2px 4px 4px;
+    width: 168px;
+    flex-wrap: wrap;
+  }
+
+  .set-effects {
+    margin: 0;
+    padding-inline-start: 12px;
+
+    li {
+      list-style: none;
+      font-size: 13px;
+    }
+  }
+
+  &.quest-tooltip {
+    .icon img {
+      width: 48px;
+    }
+
+    .quest-flag {
+      align-self: center;
+      margin-left: 6px;
+      flex-shrink: 0;
+    }
+
+    .reward-header {
+      font-size: 14px;
+    }
+
+    .reward-option {
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .stage-criteria {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+
+    .reward-list {
+      margin: 2px 0;
+      font-size: 13px;
+
+      .currency {
+        font-size: 13px;
+        padding-right: 16px;
+      }
+
+      .currency:after {
+        zoom: 0.8;
+      }
+    }
+  }
+}
+
+.dark-mode .MuiTooltip-tooltip.archeage-tooltip {
+  background: rgba(43, 43, 40, 0.95);
+  border-color: #272725;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75), inset 0 0 5px 0 #2E2E2E;
+  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75), inset 0 0 5px 0 #2E2E2E;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75), inset 0 0 5px 0 #2E2E2E;
+  color: #D0BFAC;
+
+  .icon {
+    background-color: transparent;
+  }
+
+  .currency {
+    color: #4D9BDC;
+  }
+}
+
+.negative, .negative .currency {
+  color: #BE3D36;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.text-orange {
+  color: #FF9D28;
+}
+
+.text-yellow, .text-blue {
+  color: #F6CC66;
+}
+
+.text-light_blue {
+  color: #8DC2DF;
+}
+
+.text-scale {
+  color: #81D85D;
+}
+
+.text-green {
+  color: #95B84B;
+}
+
+.text-buff, .text-bright_green {
+  color: #02FE46;
+}
+
+.text-dark_green {
+  color: #0D9A24;
+}
+
+.text-use, .text-gray {
+  color: #919191;
+}
+
+.text-white {
+  color: #FFFFFF;
+}
+
+.text-red {
+  color: #DE482F;
+}
+
+.text-use {
+  display: block;
+}
+
+.tt-ancestral {
+  color: #FCCE3F;
+}
+
+.tt-debuff {
+  color: #EA3C16;
+}
+
+.tt-buff {
+  color: #32D51D;
+}
